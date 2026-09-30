@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clara Andrzejewsky Antonacci — Dev Front-End</title>
+<meta name="description" content="Portfólio interativo de Clara Andrzejewsky Antonacci, desenvolvedora front-end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Web Component oficial do Spline (opcional). Se SPLINE_SCENE_URL (em script.js)
+     estiver vazia, o teclado CSS 3D abaixo é usado. -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="starfield" id="starfield" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="brand">
+    <span class="brand-mark">CA</span>
+    <span class="brand-text">
+      <span class="brand-name">Clara<b>.</b>dev</span>
+      <span class="brand-role">Desenvolvedora Full-Stack</span>
+    </span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projetos</a>
+    <a href="#contact">Contato</a>
+  </nav>
+  <button class="sound-toggle" id="soundToggle" aria-pressed="false" title="Som do teclado">
+    <span class="sound-icon">🔊</span>
+  </button>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projetos</a>
+  <a href="#contact">Contato</a>
+</nav>
+
+<main id="top">
+
+  <section class="hero" id="skills">
+    <div class="hero-pin" id="heroPin">
+
+      <div class="hero-copy" id="heroCopy">
+        <p class="eyebrow">Olá, eu sou a</p>
+        <h1 class="hero-title">Clara<br>Andrzejewsky<br>Antonacci</h1>
+        <p class="role-badge">Desenvolvedora Full-Stack</p>
+        <p class="hero-sub">Desenvolvedora Full-Stack que resolve problemas que você não sabia que tinha.</p>
+      </div>
+
+      <div class="skills-label" id="skillsLabel">
+        <h2>SKILLS</h2>
+        <p class="hint">(dica: pressione uma tecla)</p>
+      </div>
+
+      <div class="key-caption" id="keyCaption" aria-live="polite">
+        <span class="key-caption-name" id="captionName"></span>
+        <span class="key-caption-text" id="captionText"></span>
+      </div>
+
+      <!-- TECLADO à direita (gira e desce ao rolar) -->
+      <div class="keyboard-scene" id="keyboardScene">
+        <div class="keyboard-stage" id="keyboardStage">
+
+          <div class="spline-wrap" id="splineWrap" hidden>
+            <spline-viewer id="splineViewer" loading-anim-type="spinner-small-light"></spline-viewer>
+          </div>
+
+          <div class="keyboard-3d" id="keyboard3d">
+            <div class="bongo-cat" id="bongoCat" aria-hidden="true">
+              <svg viewBox="0 0 220 130" class="bongo-svg">
+                <ellipse cx="110" cy="112" rx="86" ry="14" fill="rgba(0,0,0,0.35)"/>
+                <path d="M40 95 C40 45 75 15 110 15 C145 15 180 45 180 95 Z" fill="#efe0d1"/>
+                <path d="M52 30 L38 -2 L70 22 Z" fill="#efe0d1"/>
+                <path d="M168 30 L182 -2 L150 22 Z" fill="#efe0d1"/>
+                <path d="M56 30 L46 6 L68 22 Z" fill="#f6c9d8"/>
+                <path d="M164 30 L174 6 L152 22 Z" fill="#f6c9d8"/>
+                <ellipse cx="82" cy="66" rx="7" ry="9" fill="#2b2320"/>
+                <ellipse cx="138" cy="66" rx="7" ry="9" fill="#2b2320"/>
+                <path d="M100 82 Q110 90 120 82" stroke="#c98a63" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <ellipse cx="110" cy="76" rx="5" ry="4" fill="#e39b7a"/>
+                <g id="pawLeft" class="paw paw-left"><ellipse cx="70" cy="108" rx="16" ry="11" fill="#efe0d1"/></g>
+                <g id="pawRight" class="paw paw-right"><ellipse cx="150" cy="108" rx="16" ry="11" fill="#efe0d1"/></g>
+              </svg>
+            </div>
+            <div class="keys-grid" id="keysGrid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-pill" id="scrollPill" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="section-head">
+      <h2>Projetos</h2>
+      <p>Algumas coisas que eu construí com muito café e alguns bugs vencidos.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-glow" style="--pc:#61DBFB"></div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">JavaScript</span>
+          </div>
+
+          <h3>Cafeteria React</h3>
+
+          <p>
+            Projeto de uma cafeteria desenvolvido com React e Vite,
+            com uma interface moderna para apresentar produtos e informações
+            da cafeteria de forma organizada e interativa.
+          </p>
+
+          <div class="project-links">
+            <a href="https://cafeteria-react-eta.vercel.app/" target="_blank" class="proj-link">
+              Ver projeto →
+            </a>
+            <a href="https://cafeteria-react-eta.vercel.app/" target="_blank" class="proj-link ghost">
+              Acessar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-glow" style="--pc:#54C5F8"></div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Mobile</span>
+          </div>
+
+          <h3>Cadastro de Pessoas</h3>
+
+          <p>
+            Aplicativo mobile desenvolvido com Flutter para cadastro de pessoas,
+            com telas de navegação, formulário de cadastro e uma interface
+            desenvolvida para praticar conceitos de desenvolvimento mobile.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/ClaraAntonacci/flutter_cadastro_de_pessoas"
+               target="_blank"
+               class="proj-link">
+              Ver projeto →
+            </a>
+            <a href="https://github.com/ClaraAntonacci/flutter_cadastro_de_pessoas"
+               target="_blank"
+               class="proj-link ghost">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-glow" style="--pc:#E63946"></div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+
+          <h3>Senai League</h3>
+
+          <p>
+            Joguinho desenvolvido como projeto web, utilizando HTML, CSS e
+            JavaScript. O projeto trabalha interatividade, lógica de programação
+            e criação de uma experiência simples e divertida no navegador.
+          </p>
+
+          <div class="project-links">
+            <a href="https://senai-league.vercel.app/"
+               target="_blank"
+               class="proj-link">
+              Jogar →
+            </a>
+            <a href="https://senai-league.vercel.app/"
+               target="_blank"
+               class="proj-link ghost">
+              Acessar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-glow" style="--pc:#8B1E3F"></div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+
+          <h3>Jornal Virtual</h3>
+
+          <p>
+            TCC desenvolvido para o ambiente escolar, com notícias, feed de
+            publicações, hashtags, comentários, denúncias e diferentes níveis
+            de permissão para usuários, professores e administradores.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/gigi-ca/Jornal.Virtual"
+               target="_blank"
+               class="proj-link">
+              Ver projeto →
+            </a>
+            <a href="https://github.com/gigi-ca/Jornal.Virtual"
+               target="_blank"
+               class="proj-link ghost">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Vamos trabalhar <span>juntos</span></h2>
+      <p class="contact-sub">Tem um projeto, uma ideia ou só quer trocar uma ideia ? Me chama.</p>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Como posso te chamar?" required>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" placeholder="Conta a ideia aí..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Enviar mensagem</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+
+        <div class="contact-side">
+          <a class="social-row" href="https://www.linkedin.com/in/clara-andrzejewsky-antonacci-5a986b3aa/" target="_blank" rel="noopener">
+            <span class="social-dot" style="--sc:#0A66C2"></span> LinkedIn
+          </a>
+
+          <a class="social-row" href="https://wa.me/5519982612779" target="_blank" rel="noopener">
+            <span class="social-dot" style="--sc:#25D366"></span> WhatsApp
+          </a>
+
+          <a class="social-row" href="https://www.instagram.com/clara_.antonacci/" target="_blank" rel="noopener">
+            <span class="social-dot" style="--sc:#E1306C"></span> Instagram
+          </a>
+
+          <a class="social-row" href="mailto:andrzejewskyantonacciclara@gmail.com">
+            <span class="social-dot" style="--sc:#EA4335"></span> andrzejewskyantonacciclara@gmail.com
+          </a>
+
+          <a class="github-btn" href="https://github.com/ClaraAntonacci" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.01 2.81-.01 3.19 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Clara Andrzejewsky Antonacci. Feito com café e CSS 3D.</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
