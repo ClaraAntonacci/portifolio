@@ -143,11 +143,11 @@ const KEYS = [
 
 const EMAIL = 'andrzejewskyantonacciclara@gmail.com';
 const LINKS = {
-  linkedin:  '[https://www.linkedin.com/in/clara-andrzejewsky-antonacci-5a986b3aa/](https://www.linkedin.com/in/clara-andrzejewsky-antonacci-5a986b3aa/)',
-  whatsapp:  '[https://wa.me/5519982612779](https://wa.me/5519982612779)',
-  instagram: '[https://www.instagram.com/clara_.antonacci/](https://www.instagram.com/clara_.antonacci/)',
+  linkedin:  'https://www.linkedin.com/in/clara-andrzejewsky-antonacci-5a986b3aa/',
+  whatsapp:  'https://wa.me/5519982612779',
+  instagram: 'https://www.instagram.com/clara_.antonacci/',
   email:     `mailto:${EMAIL}`,
-  github:    '[https://github.com/ClaraAntonacci](https://github.com/ClaraAntonacci)',
+  github:    'https://github.com/ClaraAntonacci',
 };
 
 const keysGrid = document.getElementById('keysGrid');
